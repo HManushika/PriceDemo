@@ -1,0 +1,10 @@
+
+<app-add-product (redirect)="pOrders=$event">></app-add-product>
+<app-view-products [orders]="pOrders"></app-view-products>
+
+<div class="card my-5">
+  <div class="card-body">
+    <p>Total : {{calculateTotal ()}}</p>
+  </div>
+</div>
+
