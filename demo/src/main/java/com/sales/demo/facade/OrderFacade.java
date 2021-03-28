@@ -7,6 +7,7 @@ import com.sales.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -18,9 +19,12 @@ public class OrderFacade {
     @Autowired
     OrderService orderService;
 
-    public Order getPriceDetailForEach(Integer productId, int cartonNumber, int singlesNumber) {
+    public List<Order> getPriceDetailForEach(Integer productId, int cartonNumber, int singlesNumber) {
         Product product = productService.getProductById(productId);
-        return orderService.getPriceDetailForEach(product, cartonNumber, singlesNumber);
+        Order order =  orderService.getPriceDetailForEach(product, cartonNumber, singlesNumber);
+        List<Order> orders = new ArrayList<>();
+        orders.add(order);
+        return orders;
     }
     public List<Order> getAllPriceDetails() {
         List<Product> allProducts = productService.getAllProducts();

@@ -25,16 +25,12 @@ public class OrderController {
     @GetMapping(value="/{id}/{carton}/{singles}")
     @ResponseBody
     public List<Order> getPriceDetailForEach(@PathVariable(value = "id") Integer productId, @PathVariable(value = "carton") Integer carton, @PathVariable(value = "singles") Integer singles) {
-        Order o1 = orderFacade.getPriceDetailForEach(productId, carton, singles);
-        List<Order> order = new ArrayList<>();
-        order.add(o1);
-        return order;
+        return orderFacade.getPriceDetailForEach(productId, carton, singles);
     }
 
     @GetMapping(value="/list")
     @ResponseBody
     public List<Order> getAllPriceDetails() {
         return orderFacade.getAllPriceDetails();
-
     }
 }
