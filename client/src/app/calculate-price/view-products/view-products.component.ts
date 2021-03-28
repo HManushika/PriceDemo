@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Order} from "../../order";
+import {Order} from '../../order';
 
 @Component({
   selector: 'app-view-products',
