@@ -16,11 +16,7 @@ import java.util.List;
 @RequestMapping("order")
 public class OrderController {
     @Autowired
-    OrderService orderService;
-
-    @Autowired
     OrderFacade orderFacade;
-
 
     @GetMapping(value="/{id}/{carton}/{singles}")
     @ResponseBody

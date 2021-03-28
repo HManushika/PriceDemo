@@ -26,6 +26,7 @@ public class OrderFacade {
         orders.add(order);
         return orders;
     }
+
     public List<Order> getAllPriceDetails() {
         List<Product> allProducts = productService.getAllProducts();
         return orderService.getAllPriceDetails(allProducts);
